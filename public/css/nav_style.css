@@ -1,0 +1,66 @@
+/* ===============================
+   GLOBAL NAVBAR – THE CONTINENTAL
+   =============================== */
+
+body {
+    background-color: #020617;
+    color: #e5e7eb;
+    font-family: 'Inter', sans-serif;
+}
+
+/* NAV */
+nav {
+    background: linear-gradient(135deg, #020617, #0f172a);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* BRAND */
+nav h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #facc15;
+}
+
+/* LINKS */
+nav a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e5e7eb;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #facc15;
+    text-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+}
+
+/* LOGOUT */
+nav a.text-red-400 {
+    color: #f87171;
+    font-weight: 600;
+}
+
+nav a.text-red-400:hover {
+    color: #ef4444;
+}
+
+/* USER NAME */
+nav span {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    nav .container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}

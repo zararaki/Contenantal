@@ -1,0 +1,164 @@
+/* ===============================
+   CLIENT THEME – THE CONTINENTAL
+   =============================== */
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #e5e7eb;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.16), transparent 55%),
+        linear-gradient(135deg, #020617 0%, #0a0f1a 50%, #020617 100%);
+}
+
+/* MAIN WRAPPER */
+.client-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+}
+
+/* TITLES */
+.page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+.primary-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #dc2626, #7f1d1d);
+    color: white;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 30px rgba(220,38,38,0.35);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 45px rgba(220,38,38,0.5);
+}
+
+/* ===============================
+   FORM CARD
+   =============================== */
+.quest-form-card {
+    background: rgba(15, 23, 42, 0.96);
+    padding: 3rem;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+.quest-form-card input,
+.quest-form-card textarea,
+.quest-form-card select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    background: #020617;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #e5e7eb;
+    outline: none;
+}
+
+.quest-form-card input::placeholder,
+.quest-form-card textarea::placeholder {
+    color: #6b7280;
+}
+
+.quest-form-card input:focus,
+.quest-form-card textarea:focus,
+.quest-form-card select:focus {
+    border-color: #dc2626;
+}
+
+/* ===============================
+   DASHBOARD
+   =============================== */
+.dashboard-actions {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.quest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* QUEST CARD */
+.quest-card {
+    background: rgba(15, 23, 42, 0.96);
+    padding: 2rem;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.quest-card:hover {
+    transform: translateY(-6px);
+}
+
+.quest-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.quest-status span {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.quest-meta {
+    font-size: 0.95rem;
+    color: #9ca3af;
+}
+
+/* STATUS BORDERS */
+.status-pending {
+    border-color: #dc2626;
+}
+
+.status-approved {
+    border-color: #16a34a;
+}
+
+/* PROOF IMAGE */
+.quest-card img {
+    margin-top: 1rem;
+    max-width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* EMPTY STATE */
+.empty-state {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #9ca3af;
+    margin-top: 3rem;
+    
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .quest-form-card {
+        padding: 2rem;
+    }
+}

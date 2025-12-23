@@ -1,0 +1,113 @@
+/* ===============================
+   HUNTER DASHBOARD THEME
+   =============================== */
+
+h1, h2 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    color: #ffffff; /* Red accent for Hunter */
+}
+
+/* PAGE CONTAINERS */
+.container,
+.max-w-3xl {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* CARD STYLING */
+.bg-gray-800 {
+    background: linear-gradient(145deg, #020617, #0f172a);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+/* ACTIVE QUEST CARD */
+.bg-gray-800 h2 {
+    color: #f87171;
+}
+
+input, textarea {
+    background-color: #020617 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e5e7eb;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #f87171;
+    box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.25);
+}
+
+/* BUTTONS */
+button,
+a.bg-red-600 {
+    background: linear-gradient(135deg, #f87171, #b91c1c);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 25px rgba(248, 113, 113, 0.3);
+}
+
+button:hover,
+a.bg-red-600:hover {
+    background: linear-gradient(135deg, #fb7185, #ef4444);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(248, 113, 113, 0.45);
+}
+
+/* TEXT COLORS */
+.text-red-400 {
+    color: #f87171 !important;
+}
+
+.text-yellow-400 {
+    color: #facc15 !important;
+}
+
+/* GRID CARDS */
+.grid > div {
+    transition: all 0.3s ease;
+}
+
+.grid > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
+}
+
+/* EMPTY STATES */
+p.text-center {
+    color: #9ca3af;
+}
+
+/* RECENT COMPLETED QUESTS WRAPPER */
+.recent-quests-wrapper {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
