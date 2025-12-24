@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class QuestController extends Controller
 {
-    // Public Quest Board - Everyone logged in can see available quests
+
     public function board()
     {
         $quests = Quest::where('status', 'approved')
@@ -22,7 +22,6 @@ class QuestController extends Controller
         return view('quests.board', compact('quests'));
     }
 
-    // Client Dashboard
     public function clientDashboard()
     {
         if (!Auth::user()->isClient())
@@ -33,7 +32,7 @@ class QuestController extends Controller
         return view('client.dashboard', compact('postedQuests'));
     }
 
-    // Client: Create Quest Form
+
     public function clientCreate()
     {
         if (!Auth::user()->isClient())
@@ -41,7 +40,7 @@ class QuestController extends Controller
         return view('client.create_quest');
     }
 
-    // Client: Store Quest
+
     public function clientStore(Request $request)
     {
         if (!Auth::user()->isClient())
@@ -68,7 +67,7 @@ class QuestController extends Controller
         return redirect('/client/dashboard')->with('success', 'Quest posted! Waiting for Admin approval.');
     }
 
-    // Hunter Dashboard
+
     public function hunterDashboard()
     {
         if (!Auth::user()->isHunter())
@@ -90,8 +89,6 @@ class QuestController extends Controller
 
         return view('hunter.dashboard', compact('activeQuest', 'completedQuests', 'availableQuests'));
     }
-
-    // Hunter: Accept Quest
     public function accept($id)
     {
         if (!Auth::user()->isHunter())
@@ -111,7 +108,7 @@ class QuestController extends Controller
         return redirect('/hunter/dashboard')->with('success', 'Quest accepted! Prove your worth.');
     }
 
-    // Hunter: Submit Proof
+
     public function submitProof(Request $request, $id)
     {
         if (!Auth::user()->isHunter())
@@ -138,7 +135,6 @@ class QuestController extends Controller
         return redirect('/hunter/dashboard')->with('success', 'Proof submitted! Waiting for Guild Master approval.');
     }
 
-    // Admin Dashboard
     public function adminDashboard()
     {
         if (!Auth::user()->isAdmin())
@@ -153,7 +149,7 @@ class QuestController extends Controller
         return view('admin.dashboard', compact('pendingQuests', 'submittedProofs', 'totalHunters', 'totalClients', 'totalCompleted'));
     }
 
-    // Admin: Approve Quest
+
     public function approveQuest($id)
     {
         if (!Auth::user()->isAdmin())
@@ -162,7 +158,6 @@ class QuestController extends Controller
         return back()->with('success', 'Quest approved!');
     }
 
-    // Admin: Reject Quest
     public function rejectQuest($id)
     {
         if (!Auth::user()->isAdmin())
@@ -171,7 +166,7 @@ class QuestController extends Controller
         return back()->with('success', 'Quest rejected.');
     }
 
-    // Admin: Complete Quest & Give Rewards
+
     public function completeQuest($id)
     {
         if (!Auth::user()->isAdmin())

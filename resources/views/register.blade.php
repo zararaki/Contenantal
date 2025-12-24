@@ -40,12 +40,15 @@
 
                     <div class="role-group">
                         @foreach($roles as $role)
-                            <label class="role-option">
-                                <input type="checkbox" name="role[]" value="{{ $role->id }}">
-                                <span>{{ $role->name }}</span>
-                            </label>
+                            @if($role->name !== 'Admin')
+                                <label class="role-option">
+                                    <input type="checkbox" name="role[]" value="{{ $role->id }}">
+                                    <span>{{ $role->name }}</span>
+                                </label>
+                            @endif
                         @endforeach
                     </div>
+
 
 
                     <button type="submit" class="auth-btn">

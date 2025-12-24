@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WelcomeMail;
 use App\Models\Custom_user;
 use App\Models\Custom_user_role;
 use Illuminate\Http\Request;
 use App\Models\Role;
+use Mail;
 use Hash;
 use Auth;
 class RegisterController extends Controller
@@ -42,7 +44,11 @@ class RegisterController extends Controller
 
         }
 
+        $mailData = [
+            'title' => 'welcome to the continantal',
+        ];
 
+        Mail::to($request->email)->send(new WelcomeMail($mailData));
         return redirect('/login')->with('status', 'Registration successful! Please log in now.');
     }
 
