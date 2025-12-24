@@ -186,7 +186,7 @@ class QuestController extends Controller
         $hunter->xp += $quest->xp_reward;
         $hunter->gold += $quest->gold_reward;
 
-        // Rank Up Logic
+
         $thresholds = ['F' => 0, 'E' => 200, 'D' => 500, 'C' => 1000, 'B' => 2000, 'A' => 4000, 'S' => 8000];
         foreach ($thresholds as $rank => $xp) {
             if ($hunter->xp >= $xp) {
